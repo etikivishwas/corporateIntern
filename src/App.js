@@ -1,12 +1,20 @@
-
+// src/App.js
+import React from 'react';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { AuthProvider } from './contexts/AuthContext';
+import Login from './components/Login/Login.jsx';
+import { GOOGLE_CLIENT_ID } from './config/googleOAuth';
 import './App.css';
-import Login from './components/Login/Login';
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      <AuthProvider>
+        <div className="App">
+          <Login />
+        </div>
+      </AuthProvider>
+    </GoogleOAuthProvider>
   );
 }
 
