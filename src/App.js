@@ -1,9 +1,9 @@
 // src/App.js
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { AuthProvider } from './contexts/AuthContext';
-// import Login from './components/Login/Login.jsx';
-// import Navbar from './components/Navbar/Navbar.jsx';
+import Dashboard from './pages/Dashboard/DashBoard.jsx';
 import Projects from './pages/Projects/Projects.jsx';
 import { GOOGLE_CLIENT_ID } from './config/googleOAuth';
 import './App.css';
@@ -12,11 +12,16 @@ function App() {
   return (
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
       <AuthProvider>
-        <div className="App">
-          {/* <Login /> */}
-          {/* <Navbar /> */}
-          <Projects />
-        </div>
+        <Router>
+          <div className="App">
+            <Routes>
+              {/* <Route path="/login" element={<Login />} /> */}
+              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/projects" element={<Projects />} />
+            </Routes>
+          </div>
+        </Router>
       </AuthProvider>
     </GoogleOAuthProvider>
   );

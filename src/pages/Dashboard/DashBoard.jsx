@@ -1,6 +1,7 @@
 // Dashboard.jsx
 import React from "react";
 import styles from "./styles.module.css";
+import Navbar from '../../components/Navbar/Navbar.jsx'
 import {
   FaBell,
   FaTasks,
@@ -21,42 +22,9 @@ import {
 
 export default function Dashboard() {
   return (
+    <div>
+      <Navbar />
     <div className={styles.dashboard}>
-      {/* Top Nav
-      <div className={styles.topNav}>
-        <div className={styles.brand}>CorporateIntern</div>
-        <ul className={styles.nav}>
-          <li className={`${styles.navItem} ${styles.navActive}`}>
-            <FaHome className={styles.icon} /> Dashboard
-          </li>
-          <li className={styles.navItem}>
-            <FaProjectDiagram className={styles.icon} /> Projects
-          </li>
-          <li className={styles.navItem}>
-            <FaTicketAlt className={styles.icon} /> Tickets
-          </li>
-          <li className={styles.navItem}>
-            <FaFileAlt className={styles.icon} /> Documents
-          </li>
-          <li className={styles.navItem}>
-            <FaComments className={styles.icon} /> Chat
-          </li>
-          <li className={styles.navItem}>
-            <FaChalkboardTeacher className={styles.icon} /> Mentorship
-          </li>
-          <li className={styles.navItem}>
-            <FaChartLine className={styles.icon} /> Analytics
-          </li>
-        </ul>
-        <div className={styles.navRight}>
-          <div className={styles.bellWrap}>
-            <FaBell />
-            <span className={styles.badge}>3</span>
-          </div>
-          <div className={styles.avatar}>A</div>
-        </div>
-      </div> */}
-
       <p className={styles.welcome}>
         Welcome back, Alex! Here’s your progress overview.
       </p>
@@ -209,6 +177,7 @@ export default function Dashboard() {
           </ul>
         </div>
       </div>
+    </div>
     </div>
   );
 }

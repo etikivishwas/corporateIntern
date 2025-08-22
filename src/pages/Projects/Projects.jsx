@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './styles.module.css'
 import Navbar from '../../components/Navbar/Navbar.jsx'
 import { FaPlay, FaPowerOff } from 'react-icons/fa'
+import Image from './passport.jpg'
 
 function Projects() {
   return (
@@ -22,7 +23,6 @@ function Projects() {
         </div>
 
         <div className={styles.projects}>
-          {/* Project 1 */}
           <div className={styles.card}>
             <div className={styles.cardHeader}>
               <h2 className={styles.cardTitle}>E-Learning Platform</h2>
@@ -70,7 +70,6 @@ function Projects() {
             </div>
           </div>
 
-          {/* Project 2 */}
           <div className={styles.card}>
             <div className={styles.cardHeader}>
               <h2 className={styles.cardTitle}>Task Management System</h2>
@@ -115,13 +114,11 @@ function Projects() {
         </div>
       </div>
       <div className={styles.container2}>
-        {/* To Do */}
         <div className={styles.cards}>
           <div className={styles.header}>
             <h3>To Do</h3>
             <span className={styles.count}>2</span>
           </div>
-
           <div className={styles.task}>
             <h3>Design course catalog UI</h3>
             <p>Create responsive course listing with search and filters</p>
@@ -129,7 +126,7 @@ function Projects() {
               <span className={styles.sp}>5 SP</span>
               <img
                 className={styles.avatar}
-                src="https://randomuser.me/api/portraits/men/32.jpg"
+                src={Image}
                 alt="User"
               />
             </div>
@@ -140,12 +137,15 @@ function Projects() {
             <p>Review and update API documentation</p>
             <div className={styles.footer}>
               <span className={styles.sp}>3 SP</span>
-              <span className={styles.name}>Priya</span>
+              <img
+                className={styles.avatar}
+                src={Image}
+                alt="User"
+              />
             </div>
           </div>
         </div>
 
-        {/* In Progress */}
         <div className={styles.cards}>
           <div className={styles.header}>
             <h3>In Progress</h3>
@@ -159,7 +159,7 @@ function Projects() {
               <span className={styles.sp}>8 SP</span>
               <img
                 className={styles.avatar}
-                src="https://randomuser.me/api/portraits/men/45.jpg"
+                src={Image}
                 alt="User"
               />
             </div>
@@ -172,14 +172,13 @@ function Projects() {
               <span className={styles.sp}>10 SP</span>
               <img
                 className={styles.avatar}
-                src="https://randomuser.me/api/portraits/men/51.jpg"
+                src={Image}
                 alt="User"
               />
             </div>
           </div>
         </div>
 
-        {/* Review */}
         <div className={styles.cards}>
           <div className={styles.header}>
             <h3>Review</h3>
@@ -193,14 +192,13 @@ function Projects() {
               <span className={styles.sp}>6 SP</span>
               <img
                 className={styles.avatar}
-                src="https://randomuser.me/api/portraits/women/41.jpg"
+                src={Image}
                 alt="User"
               />
             </div>
           </div>
         </div>
 
-        {/* Done */}
         <div className={styles.cards}>
           <div className={styles.header}>
             <h3>Done</h3>
@@ -212,7 +210,11 @@ function Projects() {
             <p>Create comprehensive test suite for all API endpoints</p>
             <div className={styles.footer}>
               <span className={styles.sp}>6 SP</span>
-              <span className={styles.name}>Priya</span>
+              <img
+                className={styles.avatar}
+                src={Image}
+                alt="User"
+              />
             </div>
           </div>
         </div>
