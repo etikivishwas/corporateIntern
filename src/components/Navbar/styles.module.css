@@ -51,7 +51,6 @@
   background-color: var(--nav-hover);
 }
 
-/* ✅ Active link (NavLink provides "isActive") */
 .active {
   background-color: var(--active-bg);
   border: 1px solid var(--accent);

@@ -5,6 +5,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { AuthProvider } from './contexts/AuthContext';
 import Dashboard from './pages/Dashboard/DashBoard.jsx';
 import Projects from './pages/Projects/Projects.jsx';
+import Documents from './pages/Documents/Documents.jsx';
 import { GOOGLE_CLIENT_ID } from './config/googleOAuth';
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/documents" element={<Documents />} />
             </Routes>
           </div>
         </Router>
