@@ -7,6 +7,9 @@ import Dashboard from './pages/Dashboard/DashBoard.jsx';
 import Projects from './pages/Projects/Projects.jsx';
 import Documents from './pages/Documents/Documents.jsx';
 import { GOOGLE_CLIENT_ID } from './config/googleOAuth';
+import Login from './components/Login/Login.jsx';
+import TeamChat from './pages/Chats/TeamCommunication.jsx';
+import Mentorship from './pages/Mentorship/Mentorship.jsx';
 import './App.css';
 
 function App() {
@@ -16,11 +19,13 @@ function App() {
         <Router>
           <div className="App">
             <Routes>
-              {/* <Route path="/login" element={<Login />} /> */}
+              <Route path="/login" element={<Login />} />
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/documents" element={<Documents />} />
+              <Route path="/chats" element={<TeamChat />} />
+              <Route path="/mentorship" element={<Mentorship />} />
             </Routes>
           </div>
         </Router>

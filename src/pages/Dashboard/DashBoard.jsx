@@ -3,16 +3,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import Navbar from '../../components/Navbar/Navbar.jsx'
 import {
-  FaBell,
   FaTasks,
-  FaHome,
-  FaProjectDiagram,
-  FaTicketAlt,
-  FaFileAlt,
-  FaComments,
-  FaChalkboardTeacher,
-  FaChartLine,
-  FaUsers,
   FaAward,
   FaCertificate,
   FaCode,
@@ -26,13 +17,13 @@ export default function Dashboard() {
       <Navbar />
     <div className={styles.dashboard}>
       <p className={styles.welcome}>
-        Welcome back, Alex! Here’s your progress overview.
+        Welcome back, Alex! Here's your progress overview.
       </p>
 
       {/* Top Grid */}
       <div className={styles.gridTop}>
         {/* Current Progress */}
-        <div className={`${styles.card} ${styles.glowViolet}`}>
+        <div className={styles.card}>
           <div className={styles.cardTitle}>Current Progress</div>
           <div className={styles.donutWrap}>
             <div className={styles.donut} style={{ "--p": 75 }}></div>
@@ -45,7 +36,7 @@ export default function Dashboard() {
         </div>
 
         {/* Quick Stats */}
-        <div className={`${styles.card} ${styles.glowGreen}`}>
+        <div className={styles.card}>
           <div className={styles.cardTitle}>Quick Stats</div>
           <ul className={styles.statList}>
             <li>
@@ -61,7 +52,7 @@ export default function Dashboard() {
         </div>
 
         {/* Team Alpha */}
-        <div className={`${styles.card} ${styles.glowYellow}`}>
+        <div className={styles.card}>
           <div className={styles.cardTitle}>Team Alpha</div>
           <p className={styles.muted}>E-Learning Platform</p>
           <div className={styles.avatars}>
@@ -78,7 +69,7 @@ export default function Dashboard() {
         </div>
 
         {/* Recent Activity */}
-        <div className={`${styles.card} ${styles.glowPinkSoft}`}>
+        <div className={styles.card}>
           <div className={styles.cardTitle}>Recent Activity</div>
           <ul className={styles.activity}>
             <li>
@@ -115,7 +106,7 @@ export default function Dashboard() {
       {/* Bottom Grid */}
       <div className={styles.gridBottom}>
         {/* Upcoming Tasks */}
-        <div className={`${styles.card} ${styles.glowGray}`}>
+        <div className={styles.card}>
           <div className={styles.cardTitle}>Upcoming Tasks</div>
           <div className={styles.task}>
             <div>
@@ -143,7 +134,7 @@ export default function Dashboard() {
         </div>
 
         {/* Team Leaderboard */}
-        <div className={`${styles.card} ${styles.glowViolet}`}>
+        <div className={styles.card}>
           <div className={styles.cardTitle}>Team Leaderboard</div>
           <ul className={styles.leaderboard}>
             <li>
