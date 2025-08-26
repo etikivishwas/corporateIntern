@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import styles from './styles.module.css'
 import Navbar from '../../components/Navbar/Navbar.jsx'
 import { IoDocumentTextOutline } from "react-icons/io5";
+import { IoDocumentText } from "react-icons/io5";
+import { FaRunning, FaBug } from "react-icons/fa";
+import { MdChecklist } from "react-icons/md";
+import { GiChemicalDrop } from "react-icons/gi";
 
 function Documents() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -11,7 +15,36 @@ function Documents() {
     { id: 2, title: "Sprint 3 planning", version: "v2.1", status: "Approved", modified: "2023-01-01" },
     { id: 3, title: "Test Case Repository", version: "v2.1", status: "Approved", modified: "2023-01-01" },
     { id: 4, title: "Deployment Checklist", version: "v2.1", status: "Approved", modified: "2023-01-01" },
+    { id: 5, title: "User Acceptance Testing", version: "v2.1", status: "Approved", modified: "2023-01-01" },
   ];
+
+   const templates = [
+  {
+    icon: <IoDocumentText className={styles.icon} />,
+    title: "SRS Template",
+    description: "Standard template for documenting software requirements",
+  },
+  {
+    icon: <FaRunning className={styles.icon} />,
+    title: "Sprint Planning",
+    description: "Template for planning and documenting sprint goals",
+  },
+  {
+    icon: <GiChemicalDrop className={styles.icon} />,
+    title: "Test Case Template",
+    description: "Standard format for writing test cases",
+  },
+  {
+    icon: <FaBug className={styles.icon} />,
+    title: "Bug Report Template",
+    description: "Template for reporting and tracking bugs",
+  },
+  {
+    icon: <MdChecklist className={styles.icon} />,
+    title: "Deployment Checklist",
+    description: "Comprehensive checklist for deployments",
+  },
+];
 
     const filteredDocs = documents.filter(doc =>
         doc.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -45,7 +78,7 @@ function Documents() {
                     filteredDocs.map(doc => (
                     <div key={doc.id} className={styles.document}>
                         <div className={styles.icons}>
-                        <IoDocumentTextOutline className={styles.icon} />
+                        <IoDocumentTextOutline className={styles.icon1} />
                         </div>
                         <div className={styles.details}>
                         <p className={styles.docTitle}>{doc.title}</p>
@@ -66,7 +99,21 @@ function Documents() {
                 )}
                 </div>
             </div>
-        </div>
+            <div className={styles.templates}>
+                <div className={styles.templateHeader}>
+                    <h2>Document Templates</h2>
+                </div>
+                <div className={styles.templateGrid}>
+                    {templates.map((template, index) => (
+                    <div key={index} className={styles.template}>
+                        {template.icon}
+                        <h3>{template.title}</h3>
+                        <p>{template.description}</p>
+                    </div>
+                    ))}
+                </div>
+            </div>
+    </div>
   )
 }
 

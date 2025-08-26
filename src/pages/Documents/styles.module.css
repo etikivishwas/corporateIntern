@@ -26,7 +26,7 @@
 
 .buttons {
   display: flex;
-  gap: 12px; /* spacing between buttons */
+  gap: 12px; 
 }
 
 .searchBox {
@@ -73,7 +73,7 @@
 .documents {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1.5rem;
   width: 100%;
@@ -99,7 +99,7 @@
     justify-content: center;
 }
 
-.icon {
+.icon1 {
     color: white;
     font-size: 35px;
 }
@@ -137,4 +137,52 @@
     padding-right: 12px;
     border-radius: 5px;
 }
+
+.templates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  background-color: black;
+  box-sizing: border-box;
+  font-family: 'Giestmono', monospace;
+}
+
+.templateHeader {
+  color: white;
+  width: 50%;
+}
+
+.templateGrid {
+  display: flex;
+  justify-content: center; 
+  gap: 1rem;
+  width: 100%;
+}
+
+.template {
+  width: 230px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #1b1d1f;
+  color: white;
+  cursor: pointer;
+  border: 2px solid transparent; 
+  transition: all 0.3s ease;
+}
+
+.template:hover {
+  transform: translateY(-10px); 
+  border-color: purple; 
+  box-shadow: 0 6px 15px rgba(128, 0, 128, 0.4); 
+}
+
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: purple;
+}
+
 
