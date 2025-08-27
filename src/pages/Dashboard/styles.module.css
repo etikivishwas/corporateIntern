@@ -1,8 +1,8 @@
 /* Dashboard.module.css */
 
 :root {
-  --bg: #0b0b12;
-  --card: #14141c;
+  --bg: black;
+  --card: #1b1d1f;
   --border: #2a2a35;
   --text: #e5e7eb;
   --muted: #9ca3af;

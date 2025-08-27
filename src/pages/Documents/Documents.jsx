@@ -15,7 +15,6 @@ function Documents() {
     { id: 2, title: "Sprint 3 planning", version: "v2.1", status: "Approved", modified: "2023-01-01" },
     { id: 3, title: "Test Case Repository", version: "v2.1", status: "Approved", modified: "2023-01-01" },
     { id: 4, title: "Deployment Checklist", version: "v2.1", status: "Approved", modified: "2023-01-01" },
-    { id: 5, title: "User Acceptance Testing", version: "v2.1", status: "Approved", modified: "2023-01-01" },
   ];
 
    const templates = [

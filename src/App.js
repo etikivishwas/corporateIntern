@@ -10,7 +10,7 @@ import { GOOGLE_CLIENT_ID } from './config/googleOAuth';
 import Login from './components/Login/Login.jsx';
 import TeamChat from './pages/Chats/TeamCommunication.jsx';
 import Mentorship from './pages/Mentorship/Mentorship.jsx';
-import Analytics from './pages/Analytics/Analytics.jsx';
+import Tickets from './pages/Tickets/Tickets.jsx';
 import './App.css';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
               <Route path="/documents" element={<Documents />} />
               <Route path="/chats" element={<TeamChat />} />
               <Route path="/mentorship" element={<Mentorship />} />
-              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/tickets" element={<Tickets />} />
             </Routes>
           </div>
         </Router>
