@@ -12,7 +12,7 @@ import TeamChat from './pages/Chats/TeamCommunication.jsx';
 import Mentorship from './pages/Mentorship/Mentorship.jsx';
 import Tickets from './pages/Tickets/Tickets.jsx';
 import './App.css';
-import Analytics from
+import Analytics from './pages/Analytics/Analytics.jsx';
 
 function App() {
   return (
