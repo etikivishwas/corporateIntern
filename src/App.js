@@ -12,6 +12,7 @@ import TeamChat from './pages/Chats/TeamCommunication.jsx';
 import Mentorship from './pages/Mentorship/Mentorship.jsx';
 import Tickets from './pages/Tickets/Tickets.jsx';
 import './App.css';
+import Analytics from
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path="/chats" element={<TeamChat />} />
               <Route path="/mentorship" element={<Mentorship />} />
               <Route path="/tickets" element={<Tickets />} />
+              <Route path="/analytics" element={<Analytics />} />
             </Routes>
           </div>
         </Router>
