@@ -24,12 +24,12 @@ function Navbar() {
         >
           Projects
         </NavLink>
-        <NavLink 
+        {/* <NavLink 
           to="/tickets" 
           className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ""}`}
         >
           Tickets
-        </NavLink>
+        </NavLink> */}
         <NavLink 
           to="/documents" 
           className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ""}`}
