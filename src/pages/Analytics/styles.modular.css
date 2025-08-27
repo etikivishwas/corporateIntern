@@ -4,13 +4,13 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: #000000;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Giestmono", monospace;
   color: #e6e6e6;
 }
 
 .analytics-content {
   flex: 1;
-  padding: 20px;
+  padding: 2rem 3rem;
   margin-top: 20px;
 }
 
