@@ -1,17 +1,47 @@
-import React from 'react'
-import styles from './styles.module.css'
-import Navbar from '../../components/Navbar/Navbar.jsx'
-import { FaPlay, FaPowerOff } from 'react-icons/fa'
-import Image from './passport.jpg'
+import React, { useState } from 'react';
+import styles from './styles.module.css';
+import Navbar from '../../components/Navbar/Navbar.jsx';
+import { FaPlay, FaPowerOff } from 'react-icons/fa';
+import Image from './passport.jpg';
+import api from '../../services/api';
+import { useNavigate } from 'react-router-dom';
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL
+
 
 function Projects() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const launchVM = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await api.post(`${API_BASE_URL}/api/vm/launch-vm/`);
+      if (response.data.success) {
+        navigate(`/vm/${response.data.session_id}`, {
+          state: {
+            guacamole_url: response.data.guacamole_url,
+            created_at: new Date().toISOString(),
+          },
+        });
+      } else {
+        setError(response.data.error);
+      }
+    } catch (err) {
+      setError(err.response?.data?.error || 'Failed to launch VM');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Navbar />
       <div className={styles.container1}>
         <div className={styles.headings}>
           <h1 className={styles.heading}>Project Management</h1>
-          
+
           <div className={styles.buttons}>
             <button className={styles.exportBtn}>
               ⬇ Export
@@ -23,6 +53,7 @@ function Projects() {
         </div>
 
         <div className={styles.projects}>
+          {/* ---- E-Learning Platform (keep data + wire Launch VM) ---- */}
           <div className={styles.card}>
             <div className={styles.cardHeader}>
               <h2 className={styles.cardTitle}>E-Learning Platform</h2>
@@ -64,12 +95,17 @@ function Projects() {
 
             <div className={styles.actions}>
               <button className={styles.detailsBtn}>View Details</button>
-              <button className={styles.actionBtn}>
-                <FaPlay /> Launch VM
+              <button
+                onClick={launchVM}
+                disabled={isLoading}
+                className={styles.actionBtn}
+              >
+                {isLoading ? '🚀 Launching...' : <><FaPlay /> Launch VM</>}
               </button>
             </div>
           </div>
 
+          {/* ---- Task Management System (keep static as given) ---- */}
           <div className={styles.card}>
             <div className={styles.cardHeader}>
               <h2 className={styles.cardTitle}>Task Management System</h2>
@@ -113,6 +149,13 @@ function Projects() {
           </div>
         </div>
       </div>
+
+      {error && (
+        <div className={styles.errorMessage}>
+          ⚠️ {error}
+        </div>
+      )}
+
       <div className={styles.container2}>
         <div className={styles.cards}>
           <div className={styles.header}>
@@ -185,7 +228,7 @@ function Projects() {
             <span className={styles.count}>1</span>
           </div>
 
-          <div className={styles.task}>
+        <div className={styles.task}>
             <h3>Database schema design</h3>
             <p>Design optimized database schema for user data</p>
             <div className={styles.footer}>
@@ -223,5 +266,4 @@ function Projects() {
   )
 }
 
-export default Projects
-
+export default Projects;
